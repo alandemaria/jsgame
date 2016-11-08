@@ -108,7 +108,7 @@ function keyTyped(){
 
 function perdeu(){
   textSize(32);
-  text('loose!', 30, 30);
+  text('lose!', 30, 30);
   sai.roda = false;
   sai.ganhou = false;
 };
