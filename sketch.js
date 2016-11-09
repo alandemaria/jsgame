@@ -14,10 +14,12 @@ function Camada(lista) {
 };
 
 Camada.prototype.desenha = function() {
-  this.lista.forEach(function(estrela) {
-    estrela.mover();
-    estrela.desenha();
-  }, this);
+    this.lista.forEach(function(estrela) {
+      estrela.desenha();
+      if (mouseIsPressed) { 
+        estrela.mover();
+      }
+    }, this); 
 };  
 
 function Estrela(px,py,depth) {
@@ -45,7 +47,7 @@ Estrela.prototype.mover = function() {
 
 Estrela.prototype.desenha = function () {
   fill(255);
-  ellipse(this.px, this.py, 3, 3);
+  ellipse(this.px + this.depth, this.py + this.depth, 3, 3);
 };
 
 function Bola(x,y){
